@@ -1,0 +1,14 @@
+#ifndef COMPILER_CFG_H
+#define COMPILER_CFG_H
+
+#define COMPILER_CFG_MODULE_ID
+#define COMPILER_CFG_VENDOR_ID
+#define COMPILER_CFG_SW_MAJOR_VERSION                   1U
+#define COMPILER_CFG_SW_MINOR_VERSION                   0U
+#define COMPILER_CFG_SW_PATCH_VERSION                   0U
+
+#define COMPILER_CFG_AR_RELEASE_MAJOR_VERSION           21U
+#define COMPILER_CFG_AR_RELEASE_MINOR_VERSION           11U
+#define COMPILER_CFG_AR_RELEASE_PATCH_VERSION           0U
+
+#endif
