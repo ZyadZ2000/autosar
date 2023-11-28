@@ -14,20 +14,6 @@
 #include "Port_Reg.h"
 
 /* Port_Cfg.c Externs */
-extern const uint8 PortAPinsModeChangeability[8];
-extern const uint8 PortBPinsModeChangeability[8];
-extern const uint8 PortCPinsModeChangeability[8];
-extern const uint8 PortDPinsModeChangeability[8];
-extern const uint8 PortEPinsModeChangeability[6];
-extern const uint8 PortFPinsModeChangeability[5];
-
-extern const uint8 PortAPinsDirChangeability[8];
-extern const uint8 PortBPinsDirChangeability[8];
-extern const uint8 PortCPinsDirChangeability[8];
-extern const uint8 PortDPinsDirChangeability[8];
-extern const uint8 PortEPinsDirChangeability[6];
-extern const uint8 PortFPinsDirChangeability[5];
-
 extern const uint8 PortAPinsModeValues[8][14];
 extern const uint8 PortBPinsModeValues[8][14];
 extern const uint8 PortCPinsModeValues[8][14];
@@ -229,7 +215,7 @@ void Port_RefreshPortDirection(void) {
   }
 }
 
-#if PORT_SET_PIN_DIRECTION_API == TRUE
+#if PORT_SET_PIN_DIRECTION_API == STD_ON
 void Port_SetPinDirection(Port_PinType Pin, Port_PinDirectionType Direction) {
   if (PortInitialized == FALSE) return;
   Port_PinType Pin_Num = Pin & 0x0F;
@@ -285,7 +271,7 @@ void Port_SetPinDirection(Port_PinType Pin, Port_PinDirectionType Direction) {
 }
 #endif
 
-#if PORT_SET_PIN_MODE_API == TRUE
+#if PORT_SET_PIN_MODE_API == STD_ON
 void Port_SetPinMode(Port_PinType Pin, Port_PinModeType Mode) {
   if (PortInitialized == FALSE) return;
   Port_PinType Pin_Num = Pin & 0x0F;
@@ -350,7 +336,7 @@ void Port_SetPinMode(Port_PinType Pin, Port_PinModeType Mode) {
 }
 #endif
 
-#if PORT_VERSION_INFO_API == TRUE
+#if PORT_VERSION_INFO_API == STD_ON
 void Port_GetVersionInfo(Std_VersionInfoType *versioninfo) {
   if (versioninfo == NULL_PTR) {
     /* Report to DET  */

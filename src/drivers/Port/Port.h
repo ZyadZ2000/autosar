@@ -57,11 +57,6 @@
 #define PORT_INSTANCE_ID 0U
 
 /*
- * Port Number of Pins
- * */
-#define PORT_NUM_OF_PINS 43U
-
-/*
  * Port Pins Symbolic Names
  * */
 #define PORT_A_PIN_0 PORT_A_PIN_0_ID
@@ -120,11 +115,12 @@ typedef uint8 Port_PinModeType;
 typedef uint8 Port_PadDriveType;
 typedef uint8 Port_DriveType;
 typedef uint8 Port_LevelType;
+typedef uint8 Port_PinDirectionType;
+typedef boolean Port_IntPullUpActiveType;
+typedef boolean Port_SlewRateCtlType;
+typedef boolean Port_DirChangeType;
+typedef boolean Port_ModeChangeType;
 
-typedef enum {
-  PORT_PIN_IN = 0x00U,
-  PORT_PIN_OUT = 0x01U
-} Port_PinDirectionType;
 
 typedef struct {
   Port_PinType Pin;
@@ -133,8 +129,10 @@ typedef struct {
   Port_LevelType PinLevel;
   Port_PadDriveType PinPadDrive;
   Port_DriveType PinDrive;
-  boolean PinIntPullupActive;
-  boolean PinSlewRateCtl;
+  Port_IntPullUpActiveType PinIntPullupActive;
+  Port_SlewRateCtlType PinSlewRateCtl;
+  Port_DirChangeType PinDirChangeable;
+  Port_ModeChangeType PinModeChangeble;
 } Port_PinConfigType;
 
 typedef struct {
